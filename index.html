@@ -1,31 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Clarin Facilities" />
+    <meta
+      name="description"
+      content="Clarin Facilities - Manutenção predial com excelência."
+    />
     <meta
       name="keywords"
-      content="Engenharia, Solda, Empresa, Facilities, Manuntenção Predial, HTML, CSS"
+      content="Engenharia, Solda, Empresa, Facilities, Manutenção Predial, HTML, CSS"
     />
     <meta name="author" content="Lucas Amaral e Mateus Pereira" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="Clarin Facilities" />
     <meta
       property="og:description"
-      content="Clarin Facilities a disposição da sua empresa"
+      content="Clarin Facilities, à disposição da sua empresa."
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&family=Roboto+Slab:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..1000&family=Montserrat:wght@100..900&family=Poetsen+One&family=Roboto+Slab:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="global.css" />
+
+    <link rel="stylesheet" href="public/css/global.css" />
     <title>Clarin Facilities</title>
   </head>
-  <body>
-    <h1>Clarin Facilities</h1>
-    <p>Hello world</p>
+  <body class="wrapper">
+    <div id="header"> 
+    </div>
+    <br />
+
+    <main class="main-content">
+      <section class="primary-text">
+        <p>
+          Clarin Facilities é um local de excelência para a prestação de
+          manutenção predial. O objetivo é atender às mais diversas necessidades
+          dos clientes, garantindo uma excelência técnica e de qualidade.
+        </p>
+      </section>
+
+      <section class="services">
+        <h2>Serviços</h2>
+        <p>Detalhes sobre os serviços fornecidos pela empresa.</p>
+      </section>
+    </main>
+
+    <br />
+    <div id="footer">
+    </div>
+
+    <script>
+      async function loadPartial(partialId, partialPath) {
+        const response = await fetch(partialPath);
+        const html = await response.text();
+        document.getElementById(partialId).innerHTML = html;
+      }
+
+      loadPartial("header", "partials/header.html");
+      loadPartial("footer", "partials/footer.html");
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="public/js/main.js"></script>
   </body>
 </html>
