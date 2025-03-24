@@ -30,17 +30,19 @@ body {
   padding: 1rem;
 }
 
-.main-content,
-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.875rem;
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.primary-text {
+.main-content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .btn {
@@ -54,38 +56,6 @@ footer {
   transition: background-color 0.3s ease-in-out;
 }
 
-.nav-list {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  list-style-type: none;
-  transition: transform 0.3s ease-in-out;
-}
-
-.nav-list a:hover {
-  text-decoration: underline;
-  transition-timing-function: ease-in-out;
-}
-
-.nav-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.mobile-menu {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.mobile-menu.active {
-  transform: rotate(90deg);
-}
-
 .info-text {
   display: flex;
   justify-content: start;
@@ -97,59 +67,6 @@ footer {
   color: white;
 }
 
-@media (max-width: 768px) {
-  .mobile-menu {
-    display: block;
-  }
-
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    position: absolute;
-    top: 4.5rem;
-    height: 100%;
-    left: 0;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  .nav-list.active {
-    display: flex;
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .nav-item {
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-    opacity: 0;
-    animation: fadeIn 0.3s forwards;
-    animation-delay: 0.2s;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .nav-item:last-child {
-    border-bottom: none;
-  }
-}
-
 @media (max-width: 370px) {
   .main-content {
     flex-direction: column;
@@ -158,10 +75,8 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+}
+
 @media (min-width: 768px) {
-  .nav-list {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-  }
 }
