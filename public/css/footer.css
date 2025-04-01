@@ -140,9 +140,22 @@
   }
 }
 
-.footer-brand,
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
 .footer-links,
 .footer-services,
 .footer-contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.footer-brand {
   animation: fadeIn 0.5s ease-out forwards;
 }
