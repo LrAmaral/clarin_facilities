@@ -1,18 +1,55 @@
-<div class="nav-bar">
-  <h1 class="logo">Clarin Facilities</h1>
-  <nav>
-    <ul class="nav-list">
-      <li class="nav-item"><a href="#header">Home</a></li>
-      <li class="nav-item"><a href="#about">Sobre</a></li>
-      <li class="nav-item"><a href="#services">Serviços</a></li>
-      <li class="nav-item-zap"><a href="#">Entre em contato</a></li>
+<header class="header">
+  <nav class="nav-container">
+    <!-- Logo -->
+    <div class="nav-logo">
+      <a href="#home">
+        <img
+          src="public/images/logo.jpg"
+          alt="Clarin Facilities Logo"
+          class="logo"
+        />
+      </a>
+    </div>
+
+    <!-- Menu Principal -->
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Início</a></li>
+      <li><a href="#services" class="nav-link">Serviços</a></li>
+      <li><a href="#about" class="nav-link">Sobre</a></li>
+      <li><a href="#contact" class="nav-link">Contato</a></li>
     </ul>
-  </nav>
-  <ul class="nav-list">
-    <button class="btn">
-      <img src="./public/whatsapp-svgrepo-com.svg" alt="" />
-      <a href="tel:(15)99802-5982" class="btn-contact">Entre em contato</a>
+
+    <!-- Botão de Contato -->
+    <div class="nav-contact">
+      <a href="https://wa.me/seunumero" class="contact-button">
+        Fale Conosco
+        <i icon-name="phone" class="contact-icon"></i>
+      </a>
+    </div>
+
+    <!-- Botão Menu Mobile -->
+    <button class="mobile-menu-btn">
+      <i icon-name="menu" class="menu-icon"></i>
     </button>
-  </ul>
-  <div class="mobile-menu">☰</div>
-</div>
+  </nav>
+
+  <!-- Menu Mobile -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <img
+        src="public/images/logo.png"
+        alt="Clarin Facilities Logo"
+        class="mobile-logo"
+      />
+      <button class="close-menu-btn">
+        <i icon-name="x" class="close-icon"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-menu">
+      <li><a href="#home" class="mobile-nav-link">Início</a></li>
+      <li><a href="#services" class="mobile-nav-link">Serviços</a></li>
+      <li><a href="#about" class="mobile-nav-link">Sobre</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contato</a></li>
+    </ul>
+  </div>
+</header>

@@ -31,42 +31,42 @@
     <link rel="stylesheet" href="public/css/footer.css" />
     <title>Clarin Facilities</title>
   </head>
-  <body class="wrapper">
+  <body class="">
     <div id="header"></div>
-    <br />
-    <img
-      src="../public/images/img3.png"
-      alt="Manutenção Predial"
-      class="background-image"
-    />
+
     <main class="main-content">
       <div id="home"></div>
       <div id="services"></div>
       <!-- <div id="about"></div> -->
+      <div id="footer"></div>
     </main>
-
-    <br />
-    <div id="footer"></div>
 
     <script>
       async function loadPartial(partialId, partialPath) {
         const response = await fetch(partialPath);
         const html = await response.text();
         document.getElementById(partialId).innerHTML = html;
-      }
+        lucide.createIcons();
 
-      loadPartial("home", "partials/home.html");
-      loadPartial("about", "partials/about.html");
-      loadPartial("services", "partials/services.html");
+        if (partialId === "footer") {
+          const currentDate = new Date();
+          const year = currentDate.getFullYear();
+          document.querySelector(
+            ".footer-bottom-p"
+          ).innerHTML = `&copy; ${year} Clarin Facilities. Todos os direitos reservados.`;
+        }
+      }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
       loadPartial("header", "partials/header.html");
+      loadPartial("home", "partials/home.html");
+      loadPartial("services", "partials/services.html");
+      loadPartial("about", "partials/about.html");
       loadPartial("footer", "partials/footer.html");
     </script>
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      lucide.createIcons();
-    </script>
     <script src="public/js/services.js"></script>
     <script src="public/js/main.js"></script>
   </body>
