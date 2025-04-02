@@ -61,6 +61,41 @@
       </div>
     </div>
 
+    <div class="slideshow">
+      <h3>Veja nossos serviços em ação</h3>
+      <div class="slideshow-container">
+        <div class="slide fade active">
+          <img
+            src="images/img1.avif"
+            loading="lazy"
+            alt="Manutenção Elétrica"
+          />
+          <div class="text">Manutenção Elétrica</div>
+        </div>
+        <div class="slide fade">
+          <img
+            src="images/img2.avif"
+            loading="lazy"
+            alt="Manutenção Hidráulica"
+          />
+          <div class="text">Manutenção Hidráulica</div>
+        </div>
+        <div class="slide fade">
+          <img src="images/img3.png" loading="lazy" alt="Reparos Estruturais" />
+          <div class="text">Reparos Estruturais</div>
+        </div>
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+ 
     <div class="services-cta">
       <h3>Precisa de algum serviço específico?</h3>
       <p>Entre em contato conosco para uma avaliação personalizada</p>
@@ -70,3 +105,43 @@
     </div>
   </div>
 </section>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function changeSlide(n) {
+    showSlides((slideIndex += n));
+  }
+
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
+
+  function showSlides(n) {
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+
+  setInterval(() => {
+    changeSlide(1);
+  }, 5000);
+</script>
