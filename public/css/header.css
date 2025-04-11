@@ -164,6 +164,7 @@
 
 .logo,
 .mobile-logo {
+  width: 100%;
   height: 50px;
   width: auto;
 }
