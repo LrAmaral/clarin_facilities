@@ -162,7 +162,8 @@
   flex-shrink: 0;
 }
 
-.logo {
+.logo,
+.mobile-logo {
   height: 50px;
   width: auto;
 }

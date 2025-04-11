@@ -29,7 +29,11 @@
     <link rel="stylesheet" href="public/css/services.css" />
     <link rel="stylesheet" href="public/css/header.css" />
     <link rel="stylesheet" href="public/css/footer.css" />
-    <link rel="shortcut icon" href="public/images/logo.jpg" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="public/images/logo.jpg"
+      type="image/x-icon"
+    />
     <title>Clarin Facilities</title>
   </head>
   <body class="">
@@ -42,8 +46,9 @@
       <div id="footer"></div>
     </main>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-      async function loadPartial(partialId, partialPath) {
+      async function loadPartial(partialId, partialPath, callback) {
         const response = await fetch(partialPath);
         const html = await response.text();
         document.getElementById(partialId).innerHTML = html;
@@ -56,12 +61,14 @@
             ".footer-bottom-p"
           ).innerHTML = `&copy; ${year} Clarin Facilities. Todos os direitos reservados.`;
         }
-      }
-    </script>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      loadPartial("header", "partials/header.html");
+        if (callback) callback();
+      }
+
+      loadPartial("header", "partials/header.html", () => {
+        initHeaderEvents(); 
+      });
+
       loadPartial("home", "partials/home.html");
       loadPartial("services", "partials/services.html");
       loadPartial("about", "partials/about.html");
@@ -69,6 +76,6 @@
     </script>
 
     <script src="public/js/services.js"></script>
-    <script src="public/js/main.js"></script>
+    <script src="public/js/header.js"></script>
   </body>
 </html>
